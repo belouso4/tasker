@@ -1,7 +1,54 @@
 .header 
-	background-color: rgb(195, 220, 231) 
-	padding: 50px 0 
-	&__row
-		display: flex 
-		justify-content: space-between 
-		align-items: center 
+	padding: 12px 0
+	font-size: 14px
+	// height: 60px
+	@media screen and (max-width: $mobile-size)
+		padding: 20px 0
+		position: sticky
+		top: 0
+		z-index: 999
+	.container
+		@media screen and (max-width: $mobile-size)
+			justify-content: space-between
+	.logo
+		margin-right: 64px
+		@media screen and (max-width: $laptop-size)
+			margin-right: 34px
+
+nav
+	ul
+		a
+			padding: 10px 19px
+			border-radius: 3px
+			&:hover
+				background-color: var(--link-bg-blue)
+				color: var(--text-color-white)
+			@media screen and (max-width: $laptop-size)
+				padding: 10px 10px
+		li:not(:last-child)
+			margin-right: 5px
+	@media screen and (max-width: $tablet-size)
+		display: none
+
+
+.header-links
+	margin-left: auto
+	display: flex
+	align-items: center
+	@media screen and (max-width: $mobile-size)
+		display: none
+	img
+		margin-right: 56px
+		@media screen and (max-width: $laptop-size)
+			margin-right: 30px
+	.nav-links
+		&__item
+			display: block
+			white-space: nowrap
+		& > *:not(:last-child)
+			margin-right: 30px
+
+
+
+
+		

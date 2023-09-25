@@ -1,0 +1,65 @@
+.section-subscribe
+    margin-top: 125px
+    @media screen and (max-width: $mobile-size)
+        margin-top: 70px
+
+.subscribe
+    position: relative
+    background-color: var(--bg-blue)
+    color: var(--text-color-white)
+    border-radius: var(--border-radius)
+    text-align: center
+    padding: 113px 0 63px 
+    display: flex
+    justify-content: center
+    @media screen and (max-width: $mobile-size)
+        padding: 20px 
+    &-box
+        max-width: 521px
+        width: 100%
+        z-index: 2
+    &__title
+        color: var(--text-color-white)
+        margin: 10px 0 5px
+    &__text
+        margin-bottom: 35px
+    &__img
+        position: absolute
+        top: 17px
+        left: 130px
+        z-index: 1
+        @media screen and (max-width: $tablet-size)
+            top: 12px
+            left: 10px
+        @media screen and (max-width: $mobile-size)
+            display: none
+        &-faq
+            position: absolute
+            top: -470px
+            right: 0
+            max-width: 521px
+            width: 100%
+            @media screen and (max-width: $tablet-size)
+                display: none
+    &__form
+        &.form-email
+            @media screen and (max-width: $tablet-size)
+                margin: 0 0 0 auto
+                width: 88%
+            @media screen and (max-width: $mobile-size)
+                width: 100%
+        input
+            border-color: var(--border-color-white)
+            color: var(--text-color-white)
+            &::placeholder
+                color: var(--text-color-white)
+                color: var(--text-color-white)
+                opacity: 1
+        button
+            color: #1C1C1C
+            background-color: #fff
+            &:hover
+                color: #fff
+
+    
+        

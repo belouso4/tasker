@@ -1,0 +1,41 @@
+.section-offer
+    padding: 32px 0 0
+    .container
+        @media screen and (max-width: $tablet-size)
+            flex-direction: column
+
+.offer
+    max-width: 490px
+    width: 100%
+    margin: 33px 24px 0 0
+    @media screen and (max-width: $tablet-size)
+        max-width: none
+        text-align: center
+        margin: 0
+        margin-bottom: 40px
+    &__title
+        // max-width: 490px
+        // width: 100%
+    &__text
+        margin: 20px 0 54px
+        // max-width: 480px
+        // width: 100%
+        font-size: 20px
+    .form-email
+        &__btn
+            border: 1px solid #000
+            box-shadow: 0px 4px 4px 0px #00000040
+    &-img
+        max-width: 658px
+        width: 100%
+        margin-right: -74px
+        @media screen and (max-width: 1260px)
+            margin-right: 0 
+        @media screen and (max-width: $tablet-size)
+            margin: 40px 0 
+            img
+                @media screen and (max-width: $tablet-size)
+                    width: 70%
+                    display: block
+                    margin: 0 auto
+

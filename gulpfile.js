@@ -7,7 +7,9 @@ const {
     scriptsDev, 
     fontsDev, 
     watchingDev, 
-    cleanBuild
+    cleanBuild,
+    serverDev,
+    copyFilesDev
 } = require('./gulp/dev.js');
 
 const {
@@ -16,7 +18,8 @@ const {
     scriptsDocs,
     imagesDocs,
     fontsDocs,
-    cleanDocs
+    cleanDocs,
+    copyFilesDocs
 } = require('./gulp/docs.js');
 
 exports.default = series(
@@ -26,8 +29,10 @@ exports.default = series(
         imagesDev, 
         scriptsDev, 
         fontsDev,
-        watchingDev
-    )
+        watchingDev,
+        copyFilesDev
+    ),
+    serverDev
 );
 
 exports.docs = series(
@@ -37,5 +42,6 @@ exports.docs = series(
         imagesDocs,
         fontsDocs,
         scriptsDocs,
+        copyFilesDocs
     )
 );

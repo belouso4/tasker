@@ -1,11 +1,39 @@
-<header class="header">
-    <div class="container">
-        <div class="header__row">
-            <div class="logo">Logo</div>
-            <button class="mobile-nav-btn">
-                <div class="nav-icon"></div>
-            </button>
+<header class="header bg-light">
+    <div class="container d-flex align-items-center">
+        <div class="logo">
+            <a href="#">
+                <img src="assets/images/logo.png" alt="tasker">
+            </a>
         </div>
+        <nav>
+            <ul class="d-flex">
+                <li>
+                    <a href="#">Product</a>
+                </li>
+                <li>
+                    <a href="#">Solutions</a>
+                </li>
+                <li>
+                    <a href="#">Resources</a>
+                </li>
+                <li>
+                    <a href="#">Enterprise</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-links">
+            <img src="assets/images/world.svg" alt="">
+            <div class="nav-links d-flex align-items-center">
+                <a href="#" class="nav-links__item link-text">Contact Sales</a>
+                <a href="#" class="nav-links__item link-text">Login</a>
+                <a href="#" class="nav-links__item link-blue-active modal-open">Get Started</a>
+            </div>
+
+        </div>
+        <button class="mobile-nav-btn">
+            <div class="nav-icon"></div>
+        </button>
     </div>
+    @@include('mobile-nav.html')
 </header>
-@@include('mobile-nav.html')

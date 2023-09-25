@@ -1,0 +1,58 @@
+.section-features
+    padding: 72px 0
+    @media screen and (max-width: $tablet-size)
+        padding: 72px 0
+    .container
+        @media screen and (max-width: $tablet-size)
+            flex-direction: column
+            // padding: 72px 0
+
+#section-features-two
+    .container
+        @media screen and (max-width: $tablet-size)
+            flex-direction: column-reverse
+
+.features
+    max-width: 475px
+    width: 100%
+    @media screen and (max-width: $laptop-size)
+        max-width: 392px
+    @media screen and (max-width: $tablet-size)
+        max-width: none
+        text-align: center
+        margin-bottom: 100px
+    &__title
+        margin: 11px 0 9px
+    &__text
+        margin-bottom: 25px
+    &__btn
+        font-size: 14px
+
+    &-list
+        display: flex
+        gap: 20px
+        flex-wrap: wrap
+        max-width: 520px
+        width: 100%
+        @media screen and (max-width: $mobile-size)
+            justify-content: center
+            gap: 40px
+        &__item
+            width: 250px
+            height: 212px
+            padding: 24px 17px
+            border: 1px solid var(--border-color)
+            border-radius: var(--border-radius)
+            @media screen and (max-width: $mobile-size)
+                width: 100%
+            &-top
+                margin-top: -33px
+                @media screen and (max-width: $mobile-size)
+                    margin-top: 0
+            &_title
+                font-size: 24px
+                margin: 14px 0 11px
+            &_text
+                font-size: 11px
+
+

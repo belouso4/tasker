@@ -8,11 +8,14 @@
 	--radius: 4px 
 	height: calc(var(--line-height) * 3 + var(--spacing) * 2) 
 	width: var(--width) 
-	display: flex 
+	display: none 
 	justify-content: center 
 	align-items: center 
 	z-index: 999 
 	// display: none 
+	@media screen and (max-width: $mobile-size)
+		display: flex 
+
 .nav-icon 
 	position: relative 
 	width: var(--width) 

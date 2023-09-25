@@ -1,30 +1,35 @@
+import Splide from '@splidejs/splide';
+
 import mobileNav from "./modules/mobile-nav";
-mobileNav()
+import accordion from "./modules/accordion";
+import modal from "./modules/modals";
+import scrollToTop from "./modules/scroll-to-top";
 
-console.log('ok')
+import '@splidejs/splide/css';
+// import "animate.css";
 
-const func = () => {
-    // let num1 = 88
-    // let num2 = 88
+window.addEventListener('DOMContentLoaded', () => {
+    mobileNav()
+    accordion('faq')
+    modal()
+    scrollToTop('#pagetop')
+    
+    var splide = new Splide( '.splide', {
+        perPage: 2,
+        type   : 'loop',
+        // rewind : true,
+        // perMove: 1,
+        // focus  : 0,
+        gap: '16px',
+        drag   : 'free',
+        omitEnd: true,
+        breakpoints: {
+            800: {
+              perPage: 1,
+            },
+        },
+    });
+    splide.mount();
 
-    // console.log(num1 + num2)
-
-    class sums {
-        constructor() {
-            this.fruit = 23 
-            this.strin = 'rot' 
-        }
-    }
-
-    const cosr = new sums()
-
-    if (Object.keys(cosr).length) {
-        console.log(cosr.fruit + 44)
-    }
-
-    return [1,2,3,4,5,6,7,7,8,3]
-}
-
-let att = func()
-
-console.log(...att)
+    
+});

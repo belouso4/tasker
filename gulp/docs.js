@@ -12,6 +12,7 @@ const sassGlob = require('gulp-sass-glob');
 // js
 const uglify = require('gulp-uglify-es').default;
 const babel = require('gulp-babel');
+const webpack = require('webpack-stream');
 
 // html
 const fileInclude = require('gulp-file-include');
@@ -24,15 +25,13 @@ const newer = require('gulp-newer');
 
 const concat = require('gulp-concat');
 const clean = require('gulp-clean');
-const browserSync = require('browser-sync').create();
-
 
 function styles () {
     return src('./src/sass/*.sass')
         .pipe(sassGlob())
-        .pipe(scss())
+        .pipe(scss({includePaths: ['./node_modules'] }))
         // .pipe(groupMedia())
-        .pipe(webpCss())
+        // .pipe(webpCss())
         .pipe(autoprefixer({ overrideBrowserslist: ['last 10 version'] }))
         .pipe(concat('style.min.css'))
         .pipe(csso())
@@ -44,10 +43,14 @@ function fonts() {
         .pipe(dest('./docs/assets/fonts'))
 }
 
+const fileIncludeSetting = {
+	prefix: '@@',
+	basepath: '@file',
+};
+
 function html() {
-    return src('./src/html/*.html')
-        .pipe(fileInclude())
-        .pipe(webpHTML())
+    return src(['./src/html/**/*.html', '!./src/html/blocks/*.html'])
+        .pipe(fileInclude(fileIncludeSetting))
         .pipe(dest('./docs'))
 }
 
@@ -66,8 +69,14 @@ function scripts() {
         .pipe(babel({
             presets: ['@babel/preset-env']
         }))
-        .pipe(uglify())
+        // .pipe(uglify())
+        .pipe(webpack(require('./../webpack.config.js')))
         .pipe(dest('./docs/assets/js'))
+}
+
+function copyFiles() {
+    return src(['./node_modules/animate.css/animate.min.css'])
+        .pipe(dest('./docs/assets/css'))
 }
 
 function cleanDocs(cb) {
@@ -84,4 +93,5 @@ exports.htmlDocs = html
 exports.imagesDocs = images
 exports.scriptsDocs = scripts
 exports.fontsDocs = fonts
+exports.copyFilesDocs = copyFiles
 exports.cleanDocs = cleanDocs

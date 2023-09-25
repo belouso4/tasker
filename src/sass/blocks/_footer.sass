@@ -1,11 +1,58 @@
-footer 
-	background-color: rgb(62, 62, 62) 
-	padding: 50px 0 
-	font-size: 32px 
-	color: #fff 
+.footer 
 	@media (max-width: 1200px) 
-		font-size: 26px 
-	h1 
-		font-size: 32px 
+		font-size: 26px
+	&-main
+		@media screen and (max-width: $tablet-size)
+			flex-direction: column
+
+	&-desc
+		&-text
+			font-size: 14px
+			margin: 25px 0 30px
+
+.social-list
+	display: flex
+	&__list
+		&:not(:last-child)
+			margin-right: 16px
+
+.footer-menu
+	margin-left: 50px
+	@media screen and (max-width: $tablet-size)
+		margin: 0
+		margin-top: 40px
+		flex-wrap: wrap
+	&-col
+		&:not(:last-child)
+			margin-right: 54px
+	h5
+		font-size: 18px
+		margin-bottom: 15px
+	&__item
+		white-space: nowrap
+		font-size: 14px
+		@media screen and (max-width: $tablet-size)
+			margin-bottom: 20px
+		&:not(:last-child)
+			margin-bottom: 9px
+	&__list
+		&:not(:last-child)
+			margin-bottom: 17px
+
+.footer-bottom
+	margin-top: 78px
+	text-align: center
+	font-size: 14px
+
+#pagetop
+	position: fixed
+	bottom: 40px
+	right: 40px
+	font-size: 22px
+	display: none
+	&:hover
+		opacity: 0.5
+
+
 
         
